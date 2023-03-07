@@ -1,0 +1,20 @@
+{% extends "home.html" %}
+{% block content %}
+<form action="/adduser" method="post">
+    <input type="email" name="email" placeholder="Your Email" autofocus="" required>
+    <input type="password" name="password" placeholder="Your Password" id="password" required>
+    <input type="password" name="passwordConfirm" placeholder="Confirm Password" oninput="check(this)" required>
+    <button type="submit" class="button">Register</button>
+</form>
+<script language='javascript' type='text/javascript'>
+    function check(input) {
+        if (input.value != document.getElementById('password').value) {
+            input.setCustomValidity('Passwords Must be Matching.');
+        } else {
+            // input is valid -- reset the error message
+            input.setCustomValidity('');
+        }
+    }
+</script>
+<p>Already have an account? Login <a href="/login">here</a></p>
+{% endblock %}
