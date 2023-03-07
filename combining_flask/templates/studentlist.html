@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if msg == None %}
+    {% elif msg.split(",")[1] == "0" %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ msg.split(",")[0] }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% else %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ msg.split(",")[0] }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endif %}
+    <table class="table table-striped" border = 2>
+        <thead>
+            <td>Name</td>
+            <td>Address</td>
+            <td>City</td>
+        </thead>
+    {% for row in rows %}
+        <tr>
+            <td>{{row["name"]}}</td>
+            <td>{{row["addr"]}}</td>
+            <td>{{row["city"]}}</td>
+        </tr>
+    {% endfor %}
+    </table>
+    
+{% endblock content %}

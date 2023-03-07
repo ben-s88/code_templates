@@ -1,0 +1,21 @@
+#delbutton{
+    text-align: right
+}
+
+#icon_button{
+    text-align: right;
+}
+
+#icon_butt{
+    display: inline-block;
+    padding: 0px;
+    height: 30px;
+    width: 30px;
+}
+
+#save_icon{
+    align-content: center;
+    display: block;
+    height: 25px;
+    width: 25px;
+}

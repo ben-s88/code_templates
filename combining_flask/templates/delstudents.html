@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+    <table class="table table-striped" border = 2>
+        <thead>
+            <td>Name</td>
+            <td>Address</td>
+            <td>City</td>
+            <td></td>
+        </thead>
+    {% for row in rows %}
+        <tr>
+            <td>{{row["name"]}}</td>
+            <td>{{row["addr"]}}</td>
+            <td>{{row["city"]}}</td>
+            <td id="delbutton">
+                <form action="{{ url_for('delselection') }}", method="POST">
+                <button type="submit" class="btn btn-danger", value="{{ row['user_id'] }}", name="delid">X</button>
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock content %}

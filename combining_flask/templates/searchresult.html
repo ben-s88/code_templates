@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <table class="table table-striped" border = 2>
+        <thead>
+            <td>Name</td>
+            <td>Address</td>
+            <td>City</td>
+        </thead>
+    {% for row in search_result %}
+        <tr>
+            <td>{{row["name"]}}</td>
+            <td>{{row["addr"]}}</td>
+            <td> {{row["city"]}}</td>
+        </tr>
+        <br>
+    {% endfor %}
+    </table>
+{% endblock content %}

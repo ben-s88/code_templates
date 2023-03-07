@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<table class="table table-striped" border = 2>
+    <thead>
+        <td>Name</td>
+        <td>Address</td>
+        <td>City</td>
+        <td></td>
+    </thead>
+{% for row in rows %}
+    <tr>
+        <td>{{row["name"]}}</td>
+        <td>{{row["addr"]}}</td>
+        <td>{{row["city"]}}</td>
+        <td id="icon_button"><button id="icon_butt" type="submit" class="btn btn-success", value="{{ row['user_id'] }}", name="delid"><img id="save_icon" src="/static/save_icon.png"></button></td>
+    </tr>
+{% endfor %}
+</table>
+{% endblock content %}
